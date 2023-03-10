@@ -1,0 +1,1 @@
+const url="https://newsdata.io/api/1/news?apikey=pub_186594968a793831ccf426e0e67018b60013f";
