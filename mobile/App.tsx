@@ -53,6 +53,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import HomeScreen from './src/screens/HomeScreen';
+import News from './src/screens/News';
+import Card from './src/components/Card';
 
 const Stack = createNativeStackNavigator();
 
@@ -61,6 +63,8 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="HomeScreen" component={HomeScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="News" component={News} options={{headerShown: false}}/>
+        {/* <Stack.Screen name="Card" component={Card} options={{headerShown: false}}/> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

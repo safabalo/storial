@@ -6,7 +6,6 @@ import Card from '../components/Card'
 import Logo from '../images/logo.png'
 import axios from 'axios';
 
-
 function Home() {
     const url= "https://newsdata.io/api/1/news?apikey=pub_186594968a793831ccf426e0e67018b60013f&language=fr,en"
     let [data, setData] = useState([])
@@ -17,7 +16,7 @@ function Home() {
         axios.get(url)
         .then((res) => {
             setData(data = res.data.results)
-            // console.log(data)
+            console.log(data[1].source_id)
         })
         .catch((err) => {
             console.log(err)
@@ -54,7 +53,9 @@ function Home() {
             
             <ScrollView className="overflow-y-scroll h-screen" style={{ height: '80%' }}>
             {data.map((item) => (
-                // <Card isEnabled={isEnabled} title={item.title} description={item.description}/>
+                <Card isEnabled={isEnabled} title={item.title} category={item.category[0]} 
+                image={item.image_url} data={item}
+                />
             ))}
             </ScrollView>
             
